@@ -5,8 +5,13 @@ import {
   Meta,
   Scripts,
   ScrollRestoration,
+  Outlet
 } from "@remix-run/react";
 import applyStylesHref from './app.css?url';
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: applyStylesHref }
+];
 
 export default function App() {
   return (
@@ -45,6 +50,9 @@ export default function App() {
               </li>
             </ul>
           </nav>
+        </div>
+        <div id="detail">
+          <Outlet/>
         </div>
 
         <ScrollRestoration />
